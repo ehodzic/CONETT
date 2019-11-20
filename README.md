@@ -21,8 +21,13 @@ Simply run `make` command in the root CONETT folder. It will create the executab
 | ------ | ------ |
 | `-p` | Tumor graph file which shows temporal order of alterations |
 | `-g` | (optional) File of gene (sets) that should be used as seeds |
-| `-t` | (used if -g is not set) Minimum recurrence frequency of the seeds |
+| `-t` | Minimum recurrence frequency of the seeds |
 | `-e` | Minimum number of tumors that each node on the trajectory has to follow the seed in |
 | `-i` | (optional) The number of iterations for experimental estimation of the p-value of the size of the largest subgraph |
 | `-a` | Threshold for the edge confidence in the ILP formulation |
 | `-f` | Output folder name; all output files are placed into this folder |
+
+#### Example
+```sh
+./conett -p data/TRACERxDAGs_inac_singleRoot.txt -g SeedPathways.txt -t 10 -e 10 -f TRACERx_ccRCC_20191030 -a 0.85
+```
