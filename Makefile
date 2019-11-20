@@ -12,8 +12,8 @@ objects:
 	g++ -c $(CFLAGS) graph.cpp -o graph.o
 	g++ -c $(CFLAGS) entry.cpp -o entry.o
 
-conett:
-	g++ $(CFLAGS) -o $@ conett.cpp bitmask.o subnetwork.o graph.o entry.o heap.h
+conett: objects
+	g++ $(CFLAGS) -o $@ conett.cpp bitmask.o subnetwork.o graph.o entry.o heap.h -I$(INC) $(CPPLIB) -lm
 
 .cpp.o:
 	g++ -c $(CFLAGS) $^ -o $@ -I$(INC) $(CPPLIB) -lm
