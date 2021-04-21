@@ -28,6 +28,16 @@ Simply run `make` command in the root CONETT folder. It will create the executab
 | `-f` | Output folder name; all output files are placed into this folder |
 
 #### Example
+
+Command to run:
 ```sh
 ./conett -p data/TRACERxDAGs_inac_singleRoot.txt -g SeedPathways.txt -t 10 -e 10 -f TRACERx_ccRCC_20191030 -a 0.85
+```
+Tumor graph file is a transitive precedence graph, describing each **directed** edge with the name of the patient/sample and two pairs of node names and the corresponding alteration types. For example:
+```sh
+T001  GL  - gene1 SNV
+T001  GL  - gene2 CNGAIN
+T001  gene1 SNV gene2 CNGAIN
+T002  GL  - gene1 CNLOSS
+...
 ```
